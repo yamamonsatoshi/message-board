@@ -19,6 +19,12 @@
 .row
   p#message-navi こちらからメッセージを投稿してください。
   =form_for Message.new, :html => {class: "form-horizontal"}  do |f|
+    - if @message.errors.present?
+      .alert.alert-danger
+        = alert
+        ul 
+          - @message.errors.full_messages.each do |full_message|
+            li =full_message 
     .form-group
       label.col-md-2.control-label for="inputName"  名前：
       .col-md-10
