@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   
   def update
     if message.update(message_params)
-      redirect_to root_path, notice: '更新しました'
+      redirect_to root_path, notice: 'メッセージを更新しました'
     else
       render 'edit'
     end
@@ -21,8 +21,9 @@ class MessagesController < ApplicationController
   
   def create
     @message = Message.new(message_params)
+    puts params
     if @message.save
-      redirect_to root_path, flash[:notice] = 'メッセージを保存しました'
+      redirect_to root_path, notice: 'メッセージを保存しました'
     else
       # メッセージが保存できなかった時
       @messages = Message.all
