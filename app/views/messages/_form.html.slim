@@ -8,15 +8,18 @@
           - @message.errors.full_messages.each do |full_message|
             li =full_message 
     .form-group
-      label.col-md-2.control-label for="inputName"  名前：
+      = f.label :name, :class => "col-md-2 control-label"
+        | 名前：
       .col-md-10
         = f.text_field :name, :class => "form-control", :placeholder => "名前：仮名士郎", :value => @message.name
     .form-group
-      label.col-md-2.control-label for="inputName"  年齢：
+      = f.label :age, :class => "col-md-2 control-label"
+        | 年齢：
       .col-md-10
         = f.number_field :age, :class => "form-control", :placeholder => "18", :value => @message.age
     .form-group
-      label.col-md-2.control-label for="inputDetail"  内容：
+      = f.label :body, :class => "col-md-2 control-label"
+        | 内容：
       .col-md-10
         = f.text_area :body, :class => "form-control", :placeholder => "メッセージを入力：今度、鎌倉にでも遊びに行きましょう", :value => @message.body
     .form-group
