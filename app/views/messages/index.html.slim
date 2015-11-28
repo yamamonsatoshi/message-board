@@ -7,15 +7,28 @@
         thead
           tr
             th#message-name 投稿名
+<<<<<<< HEAD
             th#message-body 内容
+=======
+            th#message-age 年齢
+            th#message-body 内容
+            th#messave-action 操作
+>>>>>>> 7edd30cba7361f6887f5674e99ac15b94facafbd
         - @messages.each do |message|
           tbody
             tr
               th
                 span.label.label-info
                   = message.name
+              td = message.age
               td = message.body
+              td
+                button.btn.btn-default
+                  = link_to "edit", edit_message_path(message)
+                button.btn.btn-warning
+                  = link_to "destroy", message, method: :delete, data: { confirm: '削除してもよろしいですか？'} 
 
+<<<<<<< HEAD
 .row
   p#message-navi こちらからメッセージを投稿してください。
   =form_for Message.new, :html => {class: "form-horizontal"}  do |f|
@@ -32,3 +45,6 @@
     .form-group
       .col-md-offset-2.col-md-10
         = f.submit :class=>"btn btn-sm btn-primary", :id=>"message-submit", :value=>"新規作成"
+=======
+= render 'form'
+>>>>>>> 7edd30cba7361f6887f5674e99ac15b94facafbd
