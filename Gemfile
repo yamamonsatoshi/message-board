@@ -36,6 +36,9 @@ gem 'slim-rails'
 
 gem 'annotate'
 
+
+gem 'pry-byebug', group: :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
