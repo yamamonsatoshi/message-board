@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title MessageBoard
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" /
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    = csrf_meta_tags 
+  body
+    nav.navbar
+      .container
+        .navbar-header
+          = link_to "MessageBoard", root_path, :class=>"navbar-brand"
+    .container
+      - if notice
+        .alert.alert-info
+          = notice
+      = yield

@@ -1,3 +1,31 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+p#message-navi{
+  margin-left: 10%;
+}
+
+th#message-name{
+  width: 10%;
+}
+th#message-name{
+  width: 10%;
+}
+th#message-body{
+  width: 40%;
+}
+
+th#message-action{
+  width: 40%;
+}
+
+.field_with_errors{
+  width: 80%;
+  display: inline-block;
+  border: 1px solid #f00;
+}
+
+button.btn{
+  margin-right: 20px;
+}
