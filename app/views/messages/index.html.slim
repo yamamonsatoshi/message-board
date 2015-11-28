@@ -8,6 +8,7 @@
           tr
             th#message-name 投稿名
             th#message-detail 内容
+            th#messave-action 操作
         - @messages.each do |message|
           tbody
             tr
@@ -15,24 +16,10 @@
                 span.label.label-info
                   = message.name
               td = message.body
+              td
+                button.btn.btn-default
+                  = link_to "edit", edit_message_path(message)
+                button.btn.btn-warning
+                  = link_to "destroy", message, method: :delete, data: { confirm: '削除してもよろしいですか？'} 
 
-.row
-  p#message-navi こちらからメッセージを投稿してください。
-  =form_for Message.new, :html => {class: "form-horizontal"}  do |f|
-    - if @message.errors.present?
-      .alert.alert-danger
-        = alert
-        ul 
-          - @message.errors.full_messages.each do |full_message|
-            li =full_message 
-    .form-group
-      label.col-md-2.control-label for="inputName"  名前：
-      .col-md-10
-        = f.text_field :name, :class => "form-control", :placeholder => "名前：仮名士郎"
-    .form-group
-      label.col-md-2.control-label for="inputDetail"  内容：
-      .col-md-10
-        = f.text_area :body, :class => "form-control", :placeholder => "メッセージを入力：今度、鎌倉にでも遊びに行きましょう"
-    .form-group
-      .col-md-offset-2.col-md-10
-        = f.submit :class=>"btn btn-sm btn-primary", :id=>"message-submit", :value=>"新規作成"
+= render 'form'

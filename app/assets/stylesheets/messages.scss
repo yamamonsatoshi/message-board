@@ -10,11 +10,19 @@ th#message-name{
   width: 20%;
 }
 th#message-detail{
-  width: 80%;
+  width: 50%;
+}
+
+th#message-action{
+  width: 30%;
 }
 
 .field_with_errors{
   width: 80%;
   display: inline-block;
   border: 1px solid #f00;
+}
+
+button.btn{
+  margin-right: 20px;
 }
