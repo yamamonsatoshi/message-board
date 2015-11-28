@@ -16,6 +16,16 @@
     </div>
   </nav>
   <div class="container">
+    <% if notice %>
+      <div class="alert alert-info">
+        <%= notice %>
+      </div>
+    <% end %>
+    <p>ここに表示され雨？</p>
+    <p><%= notice %></p>
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "alert alert-info" %>
+    <% end %>
     <%= yield %>
   </div>
 </body>
