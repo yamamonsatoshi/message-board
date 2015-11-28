@@ -10,15 +10,9 @@ html
     nav.navbar
       .container
         .navbar-header
-<<<<<<< HEAD
-          a.navbar-brand href="#" Message Board
-    .container
-      = yield 
-=======
           = link_to "MessageBoard", root_path, :class=>"navbar-brand"
     .container
       - if notice
         .alert.alert-info
           = notice
       = yield
->>>>>>> 7edd30cba7361f6887f5674e99ac15b94facafbd

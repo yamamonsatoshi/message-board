@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   end
   
   def update
-    if message.update(message_params)
+    if @message.update(message_params)
       redirect_to root_path, notice: 'メッセージを更新しました'
     else
       render 'edit'
